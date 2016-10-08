@@ -4,7 +4,7 @@ import * as React from 'react';
 export class App extends React.Component<{}, {}> {
     
     render() {
-        const my_news: any[] = [
+        const my_news: ArticleData[] = [
             {
                 author: 'Саша Печкин',
                 text: 'В четверг, четвертого числа...'
@@ -28,7 +28,8 @@ export class App extends React.Component<{}, {}> {
     }
 }
 
-export class News extends React.Component<{data: any}, {}>{
+export interface NewsProps {data: any}
+export class News extends React.Component<NewsProps, {}>{
     render(){
         let newsTemplate: any;
         const data = this.props.data;
@@ -63,7 +64,10 @@ export class News extends React.Component<{data: any}, {}>{
 //     }
 // }
 
-export class Article extends React.Component<{data: any}, {}>{
+export interface ArticleProps {data: {author: string, text: string}}
+export interface ArticleData {author: string, text: string}
+
+export class Article extends React.Component<ArticleProps, {}>{
     render(){
         const author = this.props.data.author,
             text = this.props.data.text;
