@@ -1,0 +1,25 @@
+{
+  "name": "react-tutorial-with-tsc-and-webpack",
+  "version": "1.0.0",
+  "description": "React tutorial realization with typescript and webpack",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "remarkable": "^1.6.2",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "exports-loader": "^0.6.3",
+    "imports-loader": "^0.6.5",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2"
+  }
+}
