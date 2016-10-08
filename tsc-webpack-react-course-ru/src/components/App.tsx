@@ -4,7 +4,7 @@ import * as React from 'react';
 export class App extends React.Component<{}, {}> {
     
     render() {
-        const my_news = [
+        const my_news: any[] = [
             {
                 author: 'Саша Печкин',
                 text: 'В четверг, четвертого числа...'
@@ -30,18 +30,25 @@ export class App extends React.Component<{}, {}> {
 
 export class News extends React.Component<{data: any}, {}>{
     render(){
-        const newsTemplate = this.props.data.map((item: any, index: number) => {
-            return (
-                <div key={index}>
-                    <p className="news__author">{item.author}: </p>
-                    <p className="news__text">{item.text}</p>
-                </div>
-            )
-        })
-        
+        let newsTemplate: any;
+        const data = this.props.data;
+        if(this.props.data.length > 0){
+            newsTemplate = this.props.data.map((item: any, index: number) => {
+                    return (
+                        <div key={index}>
+                            <p className="news__author">{item.author}: </p>
+                            <p className="news__text">{item.text}</p>
+                        </div>
+                    )
+            })        
+        }
+        else{
+            newsTemplate = <p>К сожалению новостей нет</p>
+        }
         return (
             <div className="news">
                 {newsTemplate}
+                <strong className={(data.length > 0 ? '':'none ') + 'news_total-news'}>Всего новостей: {data.length}</strong>
             </div>
         );
     }
