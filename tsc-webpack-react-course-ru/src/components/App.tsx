@@ -30,9 +30,18 @@ export class App extends React.Component<{}, {}> {
 
 export class News extends React.Component<{data: any}, {}>{
     render(){
+        const newsTemplate = this.props.data.map((item: any, index: number) => {
+            return (
+                <div key={index}>
+                    <p className="news__author">{item.author}: </p>
+                    <p className="news__text">{item.text}</p>
+                </div>
+            )
+        })
+        
         return (
             <div className="news">
-                К сожалению, новостей нет.
+                {newsTemplate}
             </div>
         );
     }
