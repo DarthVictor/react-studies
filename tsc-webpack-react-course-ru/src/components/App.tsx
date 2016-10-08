@@ -20,9 +20,9 @@ export class App extends React.Component<{}, {}> {
         ]
         return (
             <div className="app">
-                Всем привет, я компонент App! Я умею отображать новости.
+                <h3>Новости</h3>
                 <News data={my_news} /> {/*добавили свойство data */}
-                <Comments />
+                {/*<Comments /> */}
             </div>
         );
     }
@@ -36,8 +36,7 @@ export class News extends React.Component<{data: any}, {}>{
             newsTemplate = this.props.data.map((item: any, index: number) => {
                     return (
                         <div key={index}>
-                            <p className="news__author">{item.author}: </p>
-                            <p className="news__text">{item.text}</p>
+                            <Article data={item} />
                         </div>
                     )
             })        
@@ -48,18 +47,31 @@ export class News extends React.Component<{data: any}, {}>{
         return (
             <div className="news">
                 {newsTemplate}
-                <strong className={(data.length > 0 ? '':'none ') + 'news_total-news'}>Всего новостей: {data.length}</strong>
+                <strong className={(data.length > 0 ? '':'none ') + 'news__count'}>Всего новостей: {data.length}</strong>
             </div>
         );
     }
 }
 
-export class Comments extends React.Component<{}, {}> {
-    render() {
+// export class Comments extends React.Component<{}, {}> {
+//     render() {
+//         return (
+//             <div className="comments">
+//                 "Нет новостей - комментировать нечего."
+//             </div>
+//         );
+//     }
+// }
+
+export class Article extends React.Component<{data: any}, {}>{
+    render(){
+        const author = this.props.data.author,
+            text = this.props.data.text;
         return (
-            <div className="comments">
-                "Нет новостей - комментировать нечего."
-            </div>
-        );
+                <div className='article'>
+                    <p className="news__author">{author}: </p>
+                    <p className="news__text">{text}</p>
+                </div>
+            )
     }
 }
