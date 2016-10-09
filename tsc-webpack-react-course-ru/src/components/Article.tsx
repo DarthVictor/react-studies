@@ -22,9 +22,7 @@ export class Article extends React.Component<ArticleProps, ArticleState>{
         e.preventDefault();
         this.setState({visible: true});
     }
-    render(){
-        console.log('render',this); //добавили console.log
-        
+    render(){       
         const author = this.props.data.author;
         const text = this.props.data.text;
         const bigText = this.props.data.bigText;
