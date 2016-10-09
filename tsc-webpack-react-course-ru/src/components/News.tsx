@@ -2,7 +2,19 @@ import * as React from 'react';
 import {Article, ArticleProps} from './Article';
 
 export interface NewsProps {data: any}
-export class News extends React.Component<NewsProps, {}>{
+export interface NewsState {clicks: number}
+export class News extends React.Component<NewsProps, NewsState>{
+    constructor(){
+        super();
+        this.state = {
+            clicks: 0
+        }
+    }
+    addClick(){
+        this.setState({
+            clicks: this.state.clicks + 1
+        })
+    }
     render(){
         let newsTemplate: any;
         const data = this.props.data;
@@ -21,7 +33,12 @@ export class News extends React.Component<NewsProps, {}>{
         return (
             <div className="news">
                 {newsTemplate}
-                <strong className={(data.length > 0 ? '':'none ') + 'news__count'}>Всего новостей: {data.length}</strong>
+                <strong className={(data.length > 0 ? '':'none ') + 'news__count'}>
+                    Всего новостей: {data.length}
+                </strong>
+                <strong className='clicks__count' onClick={this.addClick.bind(this)}>
+                    Всего кликов: {this.state.clicks}
+                </strong>
             </div>
         );
     }
