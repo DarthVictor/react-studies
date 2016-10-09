@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 export interface TestInputState {
     myValue: string
@@ -6,20 +7,15 @@ export interface TestInputState {
 export class TestInput extends React.Component<{}, TestInputState> {
     constructor (){
         super();
-        this.state = {
-            myValue: ''
-        }
+        
     }
-
-    onChangeInput(e: Event){
-        const target  = e.target as HTMLSelectElement;
-        this.setState({
-            myValue: target.value
-        })
+    refs: {
+        [key: string]: (Element);
+        myTestInput: (HTMLInputElement);
     }
-
     onSubmitInput(e: Event){
-        alert(this.state.myValue)
+        const el = ReactDOM.findDOMNode(this.refs.myTestInput) as HTMLInputElement
+        alert(el.value)
         e.preventDefault();
     }
 
@@ -28,9 +24,9 @@ export class TestInput extends React.Component<{}, TestInputState> {
             <form onSubmit={this.onSubmitInput.bind(this)}>
                 <input type="text"
                     className='test-input' 
-                    value={this.state.myValue}
-                    onChange={this.onChangeInput.bind(this)}
+                    defaultValue=""
                     placeholder='введите значение' 
+                    ref='myTestInput'
                 />
                 <button type="submit" >
                 OK
