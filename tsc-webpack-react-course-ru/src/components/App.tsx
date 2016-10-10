@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {ArticleData} from './Article';
 import {News, NewsProps} from './News';
-import {TestInput} from './TestInput';
+import {Add} from './Add';
 
 //export interface HelloProps { compiler: string; framework: string; }
 
@@ -28,7 +28,7 @@ export class App extends React.Component<{}, {}> {
         return (
             <div className="app">
                 <h3>Новости</h3>
-                <TestInput />
+                <Add />
                 <News data={my_news} /> {/*добавили свойство data */}
                 {/*<Comments /> */}
             </div>
