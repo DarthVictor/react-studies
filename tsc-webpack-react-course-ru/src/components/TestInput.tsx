@@ -9,6 +9,10 @@ export class TestInput extends React.Component<{}, TestInputState> {
         super();
         
     }
+    componentDidMount(){
+        const el = ReactDOM.findDOMNode(this.refs.myTestInput) as HTMLInputElement
+        el.focus();
+    }
     refs: {
         [key: string]: (Element);
         myTestInput: (HTMLInputElement);
