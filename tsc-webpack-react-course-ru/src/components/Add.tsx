@@ -21,9 +21,18 @@ export class Add extends React.Component<{}, AddState> {
     }
     onSubmitInput(e: Event){
         e.preventDefault();
-        const author = (ReactDOM.findDOMNode(this.refs.author) as HTMLInputElement).value;
-        const text = (ReactDOM.findDOMNode(this.refs.text) as HTMLInputElement).value;
-        alert(author + '\n' + text);
+        const textEl = ReactDOM.findDOMNode(this.refs.text) as HTMLInputElement
+        const authorEl = ReactDOM.findDOMNode(this.refs.author) as HTMLInputElement
+        const author = authorEl.value;
+        const text = textEl.value;
+        const item = [{
+            author: author,
+            text: text,
+            bigText: '...'
+        }];
+        (window as any).ee.emit('News.add', item);
+        textEl.value = '';
+        this.setState({textIsEmpty: true});
     }
     onCheckRuleClick(e: Event) {
         this.setState({agreeNotChecked: !this.state.agreeNotChecked}); //устанавливаем значени е в state

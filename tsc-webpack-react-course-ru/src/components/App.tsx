@@ -3,13 +3,13 @@ import {ArticleData} from './Article';
 import {News, NewsProps} from './News';
 import {Add} from './Add';
 
-export interface AppState { my_news:  ArticleData[]}
+export interface AppState { news:  ArticleData[]}
 
 export class App extends React.Component<{}, AppState> {
     constructor(){
         super();
         this.state = {
-            my_news:  [
+            news:  [
                         {
                             author: 'Саша Печкин',
                             text: 'В четчерг, четвертого числа...',
@@ -30,13 +30,14 @@ export class App extends React.Component<{}, AppState> {
     }
     
     componentDidMount() {
-        /* Слушай событие "Создана новость"  если событие произошло, обнови this.state.news */
-
+        (window as any).ee.addListener('News.add', (item: ArticleData[]) => {
+            const nextNews = item.concat(this.state.news);
+            this.setState({news: nextNews});
+        });
     }
     
     componentWillUnmount() {
-        /* Больше не слушай событие "Создана новость" */
-
+        (window as any).ee.removeListener('News.add');
     }
 
     render() {
@@ -45,7 +46,7 @@ export class App extends React.Component<{}, AppState> {
             <div className="app">
                 <h3>Новости</h3>
                 <Add />
-                <News data={this.state.my_news} />   
+                <News data={this.state.news} />   
             </div>
         );
     }
