@@ -1,9 +1,15 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import * as Redux from 'redux';
+import {Provider} from 'react-redux';
 
-import { Hello } from "./components/Hello";
+import { App } from './containers/App';
 
+import configureStore from './store/configureStore'
+const store = configureStore()
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("root")
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
 );
