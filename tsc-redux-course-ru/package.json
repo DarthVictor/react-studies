@@ -1,7 +1,7 @@
 {
   "name": "tsc-react-webpack",
   "version": "1.0.0",
-  "description": "This is a realization of quick start guide from typescript tutorials",
+  "description": "Redux [RU] Tutorial",
   "main": "./dist/bundle.js",
   "scripts": {
     "test": "node server.js"
