@@ -1,0 +1,23 @@
+{
+  "name": "tsc-react-webpack",
+  "version": "1.0.0",
+  "description": "Redux [RU] Tutorial",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "source-map-loader": "^0.1.5",
+    "express": "^4.14.0",
+    "ts-loader": "^0.8.2",
+    "webpack": "^1.13.2"
+  }
+}
