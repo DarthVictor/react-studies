@@ -1,5 +1,13 @@
 export interface RootState {
-    name: string,
-    surname: string,
-    age: number
+    user: UserState,
+    page: PageState
+}
+
+export interface UserState {
+    name: string
+}
+
+export interface PageState {
+    year: number,
+    photos: string[]
 }

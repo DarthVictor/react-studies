@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware, Reducer, Store } from 'redux'
 import rootReducer from '../reducers'
-import {RootState} from '../types'
 
-export default function configureStore(initialState?: RootState) {
+export default function configureStore(initialState?: any) {
     return createStore( rootReducer, initialState) 
 }
