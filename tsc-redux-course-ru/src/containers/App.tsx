@@ -1,6 +1,8 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
 import {RootState, UserState, PageState} from '../types'
+import User from '../components/User'
+import Page from '../components/Page'
 
 interface AppProps {
     user: UserState,
@@ -11,8 +13,8 @@ class App extends React.Component<AppProps, {}> {
     render() {
         return (
             <div className="app">
-                <p>Hello from App, {this.props.user.name} </p>
-                <p>У тебя {this.props.page.photos.length} фото за {this.props.page.year} год</p>  
+                <User name={this.props.user.name} />
+                <Page photos={this.props.page.photos} year={this.props.page.year} />
             </div>
         );
     }
