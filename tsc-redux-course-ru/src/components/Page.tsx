@@ -1,27 +1,29 @@
 import * as React from 'react'
 import {PageActions, PageActionsProps} from '../actions/PageActions'
+import {PageState} from '../types'
 
-interface PageStateProps {
-    year: number,
-    photos: string[]
-}
-type PageProps = PageStateProps & PageActionsProps
+type PageProps = PageState & PageActionsProps
 
 export default class Page extends React.Component<PageProps, {}> {
     onYearBtnClick(e: Event) {
-        this.props.setYear(Number( (e.target as HTMLElement).textContent) )
+        this.props.getPhotos(Number( (e.target as HTMLElement).textContent) )
     }
     render() {
-        const { year, photos } = this.props;
+        const { year, photos, fetching } = this.props;
         const onYearBtnClick = this.onYearBtnClick.bind(this)
-        return <div>
+        return <div className='ib page'>
             <p>
-                <button onClick={onYearBtnClick}>2016</button>
-                <button onClick={onYearBtnClick}>2015</button>
-                <button onClick={onYearBtnClick}>2014</button>
+            <button className='btn' onClick={onYearBtnClick}>2016</button>{' '}
+            <button className='btn' onClick={onYearBtnClick}>2015</button>{' '}
+            <button className='btn' onClick={onYearBtnClick}>2014</button>
             </p>
             <h3>{year} год</h3>
-            <p>You have {photos.length} fotos</p>
-        </div>
+            {
+                fetching ?
+                    <p>Загрузка...</p>
+                :
+                    <p>У тебя {photos.length} фото.</p>
+            }
+            </div>
     }
 }

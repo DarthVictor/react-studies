@@ -9,7 +9,8 @@ export interface UserState {
 
 export interface PageState {
     year: number,
-    photos: string[]
+    photos: string[],
+    fetching: boolean
 }
 
 export type Year = number
