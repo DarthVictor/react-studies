@@ -1,4 +1,5 @@
 import {Action, actionCreator} from './ActionTypes' 
+import { SET_YEAR } from '../constants/Page'
 import {Year} from '../types' 
   
 export interface PageActionsProps {
@@ -6,5 +7,5 @@ export interface PageActionsProps {
 }
 
 export const PageActions = {
-    setYear: actionCreator<Year>('SET_YEAR')
+    setYear: actionCreator<Year>(SET_YEAR)
 }
