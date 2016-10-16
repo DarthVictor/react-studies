@@ -1,12 +1,21 @@
 import * as React from 'react'
-interface UserProps {
-    name: string
-}
+import {UserActions, UserActionsProps} from '../actions/UserActions'
+import {UserState} from '../types'
+
+type UserProps = UserState & UserActionsProps
 
 export default class User extends React.Component<UserProps, {}> {
+    componentWillMount(){
+        this.props.handleCheckStatus();
+    }
     render() {
-        return <div>
-             <p>Hello, {this.props.name}!</p>
+        const { name, error } = this.props
+        const template = (!!name)
+                        ? <p>Привет, {name}!</p>
+                        : <button className='btn' onClick={this.props.handleLogin}>Войти</button>
+        return <div className='ib user'>
+            {template}
+            {error ? <p className='error'> {error}. <br /> Попробуйте еще раз.</p> : ''}
         </div>
     }
 }

@@ -4,7 +4,8 @@ export interface RootState {
 }
 
 export interface UserState {
-    name: string
+    name: string,
+    error: ''
 }
 
 export interface PageState {
