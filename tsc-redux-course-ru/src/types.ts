@@ -11,3 +11,5 @@ export interface PageState {
     year: number,
     photos: string[]
 }
+
+export type Year = number
