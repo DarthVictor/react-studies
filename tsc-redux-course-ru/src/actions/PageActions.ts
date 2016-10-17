@@ -23,8 +23,8 @@ function makeYearPhotos(photos: any[], selectedYear: number) {
 function getMorePhotos(offset: number, count: number, year: number, dispatch: Redux.Dispatch<any>) {
     VK.Api.call('photos.getAll', {extended:1, count: count, offset: offset}, (r: any ) => {
 
-        photosArr = photosArr.concat(r.response.slice(1))
         try {            
+            photosArr = photosArr.concat(r.response.slice(1))
             if (offset <= r.response[0] - count) {
                 offset += 200;
                 photosArr = photosArr.concat()
