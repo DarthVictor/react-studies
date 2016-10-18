@@ -22,14 +22,16 @@ function makeYearPhotos(photos: any[], selectedYear: number) {
 }
 function getMorePhotos(offset: number, count: number, year: number, dispatch: Redux.Dispatch<any>) {
     VK.Api.call('photos.getAll', {extended:1, count: count, offset: offset}, (r: any ) => {
-        try {
+
+        try {            
+            photosArr = photosArr.concat(r.response.slice(1))
             if (offset <= r.response[0] - count) {
                 offset += 200;
-                photosArr = photosArr.concat(r.response)
+                photosArr = photosArr.concat()
                 getMorePhotos(offset, count, year, dispatch)
             } 
             else {
-            let photos = makeYearPhotos(photosArr, year)
+                let photos = makeYearPhotos(photosArr, year)
                 cached = true
                 dispatch({
                     type: GET_PHOTOS_SUCCESS,
@@ -59,12 +61,16 @@ export const PageActions = {
                 type: GET_PHOTOS_REQUEST,
                 payload: year
             })
-            setTimeout(() => {
+            if (cached) {
+                let photos = makeYearPhotos(photosArr, year)
                 dispatch({
                     type: GET_PHOTOS_SUCCESS,
-                    payload: [1,2,3,4,5]
+                    payload: photos
                 })
-            }, 1000)
+            } 
+            else {
+                getMorePhotos(0,200,year,dispatch)
+            }
         }
     }
 }

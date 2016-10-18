@@ -28,7 +28,7 @@ class App extends React.Component<AppProps, any> {
         const { handleLogin, handleCheckStatus } = this.props.userActions
         return (
             <div className="app">
-                <Page photos={page.photos} year={page.year} getPhotos={getPhotos} fetching={page.fetching}/>
+                <Page photos={page.photos} year={page.year} getPhotos={getPhotos} fetching={page.fetching} error={page.error}/>
                 <User name={user.name} handleLogin={handleLogin} handleCheckStatus={handleCheckStatus} error={user.error} />
             </div>
         );
