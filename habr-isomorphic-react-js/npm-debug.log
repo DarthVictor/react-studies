@@ -1,0 +1,36 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\NodeJS\\node.exe',
+1 verbose cli   'C:\\Users\\Victor\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'nodemon' ]
+2 info using npm@3.10.8
+3 info using node@v4.4.5
+4 verbose run-script [ 'prenodemon', 'nodemon', 'postnodemon' ]
+5 info lifecycle isomorphic-ts@1.0.0~prenodemon: isomorphic-ts@1.0.0
+6 silly lifecycle isomorphic-ts@1.0.0~prenodemon: no script for prenodemon, continuing
+7 info lifecycle isomorphic-ts@1.0.0~nodemon: isomorphic-ts@1.0.0
+8 verbose lifecycle isomorphic-ts@1.0.0~nodemon: unsafe-perm in lifecycle true
+9 verbose lifecycle isomorphic-ts@1.0.0~nodemon: PATH: C:\Users\Victor\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;C:\Users\Victor\Documents\react-studies\habr-isomorphic-react-js\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\PostgreSQL_x86\9.4\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Python27;C:\Program Files\Microsoft Windows Performance Toolkit\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_101\bin;C:\Users\Victor\AppData\Local\Android\android-sdk\tools;C:\Users\Victor\AppData\Local\Android\android-sdk\platform-tools;C:\Program Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files\Genymobile\Genymotion;C:\Users\Victor\Documents\svn-ip\mobile\runidea\node_modules\typescript\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Victor\AppData\Roaming\npm;C:\ProgramData\chocolatey\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+10 verbose lifecycle isomorphic-ts@1.0.0~nodemon: CWD: C:\Users\Victor\Documents\react-studies\habr-isomorphic-react-js
+11 silly lifecycle isomorphic-ts@1.0.0~nodemon: Args: [ '/d /s /c', 'set NODE_PATH=./src; && nodemon server.js' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:870:11)
+12 verbose stack     at process.kill (node.js:777:15)
+12 verbose stack     at process.listener (C:\Users\Victor\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:72:20)
+12 verbose stack     at process.emit (events.js:166:7)
+12 verbose stack     at processEmit (C:\Users\Victor\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (C:\Users\Victor\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (node.js:804:46)
+13 verbose cwd C:\Users\Victor\Documents\react-studies\habr-isomorphic-react-js
+14 error Windows_NT 10.0.14393
+15 error argv "C:\\Program Files\\NodeJS\\node.exe" "C:\\Users\\Victor\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "run" "nodemon"
+16 error node v4.4.5
+17 error npm  v3.10.8
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]
