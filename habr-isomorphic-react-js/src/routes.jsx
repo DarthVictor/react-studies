@@ -6,7 +6,7 @@ import HelloWorldPage from 'components/HelloWorldPage'
 import TimePage from 'components/TimePage'
 
 export default (
-    <Route component={App} path="/">
+    <Route component={App} path='/'>
         <IndexRoute component={HelloWorldPage} />
         <Route component={CounterPage} path='counters' />
         <Route component={TimePage} path='time' />
