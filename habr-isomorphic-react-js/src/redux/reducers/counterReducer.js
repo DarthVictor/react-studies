@@ -1,6 +1,6 @@
-import {INCREMENT_COUNTER} from 'redux/actons/counterActions'
+import {INCREMENT_COUNTER} from 'redux/actions/counterActions'
 
-const initialValue = {
+const initialState = {
     value: 0
 }
 
