@@ -26,7 +26,7 @@ class TimePage extends Component {
     return (
       <div>
         <PageHeader>Timestamp</PageHeader>
-        <Button loading={loading} onClick={this.handleClick} spinColor="#000">Request!</Button>
+        <Button loading={loading} onClick={this.handleClick} spinColor='#000'>Request!</Button>
         {time && <div>Time: {time}</div>}
       </div>
     );
