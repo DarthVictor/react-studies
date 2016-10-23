@@ -46,6 +46,9 @@ module.exports = {
     publicPath
   },
   module: {
+    preLoaders: [
+        {test: /\.jsx?$/, loader: 'source-map', exclude: /react-hot-loader/}
+    ],
     loaders: [
       {
         test: /\.css$/,

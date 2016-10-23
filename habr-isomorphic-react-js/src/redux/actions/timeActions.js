@@ -1,4 +1,5 @@
 import { fetch, parseResponse } from 'redux-oauth';
+import { isUserSignedIn } from 'redux/models/user';
 
 export const TIME_REQUEST_STARTED = 'TIME_REQUEST_STARTED';
 export const TIME_REQUEST_FINISHED = 'TIME_REQUEST_FINISHED';

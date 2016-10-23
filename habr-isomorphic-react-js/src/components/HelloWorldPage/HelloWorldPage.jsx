@@ -62,6 +62,7 @@ class App extends Component {
                 </div>
 
                 <h2>Авторизация</h2>
+                <OAuthButton provider='facebook' />
                 <OAuthButton provider='github' />
                 <SignOutButton />
 
