@@ -3,3 +3,5 @@
 /*/typings
 /*/.tmp
 *.pdf
+/new-stack-experiments/bundle.js
+/habr-isomorphic-react-js/*.log

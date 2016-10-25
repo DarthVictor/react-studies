@@ -2,10 +2,15 @@
   "name": "new-stack-experiments",
   "version": "0.0.1",
   "description": "My experiments with new stack for reactjs using TypeScript",
-  "main": "bundle.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "DarthVictor",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.8.4"
+  }
 }
