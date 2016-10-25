@@ -6,10 +6,10 @@ const compiler = webpack(config)
 const util = require('util')
 
 compiler.run((err, data) => {
-    console.log(util.inspect(err, {showHidden: false, depth: null}))
+    // /console.log(util.inspect(err, {showHidden: false, depth: null}))
 })
 
-compiler
+
 //const port = 3000
 //const app = express()
 // app.listen(port, () => {
