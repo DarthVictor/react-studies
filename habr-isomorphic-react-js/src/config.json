@@ -1,0 +1,20 @@
+{
+  "server": {
+    "protocol": "http",
+    "host": "darthvictor.ru:3000"
+  },
+  "facebook": {
+    "key": "981781338615183",
+    "secret": "3f80f209f6de50c23dabf042a4e1ef14",
+    "callback": "/auth/validate_token",
+    "scope": [
+      "user_friends",
+      "public_profile"
+    ]
+  },
+  "github": {
+    "key": "49fb98b4f536450fa1e7",
+    "secret": "d7a268b5c692cf819e5058260efd1fabf08ac1e4",
+    "callback": "/auth/validate_token"
+  }
+}

@@ -1,6 +1,6 @@
-import React, { PropTypes, Component } from 'react';
-
-import './HelloWorldPage.css';
+import React, { PropTypes, Component } from 'react'
+import { OAuthButton, SignOutButton } from 'components/AuthButtons'
+import './HelloWorldPage.css'
 
 const propTypes = {
     initialName: PropTypes.string
@@ -60,6 +60,12 @@ class App extends Component {
                     <div><input onChange={this.handleNameChange}/></div>
                     {this.renderGreetingWidget()}
                 </div>
+
+                <h2>Авторизация</h2>
+                <OAuthButton provider='facebook' />
+                <OAuthButton provider='github' />
+                <SignOutButton />
+
             </div>
         );
     }
