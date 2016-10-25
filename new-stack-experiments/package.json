@@ -1,0 +1,11 @@
+{
+  "name": "new-stack-experiments",
+  "version": "0.0.1",
+  "description": "My experiments with new stack for reactjs using TypeScript",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DarthVictor",
+  "license": "MIT"
+}
