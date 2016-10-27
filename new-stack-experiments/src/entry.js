@@ -1,6 +1,10 @@
-import content from './content'
-import tsContent from './tsContent.ts'
+import 'babel-polyfill'
+
+import {anotherAsync} from './content'
+//import tsContent from './tsContent.ts'
  
-require('./style.css') 
-document.write(content);
-document.write(tsContent);
+require('./style.css')
+async function run(){    
+    return await anotherAsync()
+}
+run().then((res) => document.write(res))
