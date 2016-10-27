@@ -1,5 +1,3 @@
 {
-  "globalDependencies": {
-    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20161004182750"
-  }
+  "globalDependencies": {}
 }

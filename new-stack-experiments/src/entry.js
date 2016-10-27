@@ -1,5 +1,4 @@
-import {anotherAsync} from './content'
-//import tsContent from './tsContent.ts'
+import {anotherAsync} from './tsContent.ts'
  
 async function run(){    
     return (await anotherAsync()).map((title, id) => (id+1) + '. ' + title)
