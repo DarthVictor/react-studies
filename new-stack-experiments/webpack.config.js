@@ -24,16 +24,18 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'babel', // 'babel-loader' is also a valid name to reference
-                query: {
-                    presets: ['es2015'],                    
-                    plugins: ['transform-async-to-generator']
-                }
+                loader: 'babel',
             },
             {
                 test: /\.ts$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'ts-loader' 
+                loaders:  ['babel-loader', 'ts-loader'] 
+                /*
+                ...\node_modules\webpack-core\lib\LoadersList.js:58                                                   
+                    if(element.loader) return element.loader.split("!");
+                    TypeError: element.loader.split is not a function 
+                    means, that you use "loader", instead of "loaders"
+                 */
             }
         ]
     }

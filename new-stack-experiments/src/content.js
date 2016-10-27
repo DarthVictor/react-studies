@@ -1,5 +1,6 @@
 async function asyncFetch(){
     let t = await window.fetch('https://jsonplaceholder.typicode.com/posts') 
+    console.log('ES2017 module')
     let json = t.json();
     return json
 }
