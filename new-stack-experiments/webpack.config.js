@@ -1,9 +1,10 @@
 'use strict';
+const webpack = require('webpack');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
-    entry: ['babel-polyfill', './src/entry.js'],
+    entry: ['babel-polyfill', 'whatwg-fetch','./src/entry.js'],
     output: {
         path: __dirname + '/dist',
         filename: 'bundle.js'
@@ -35,5 +36,11 @@ module.exports = {
                 loader: 'ts-loader' 
             }
         ]
-    }   
+    }
+    // ,plugins : [
+    //     new webpack.ProvidePlugin({
+    //         'Promise': 'es6-promise', // Thanks Aaron (https://gist.github.com/Couto/b29676dd1ab8714a818f#gistcomment-1584602)
+    //         'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    //     })
+    // ]
 }

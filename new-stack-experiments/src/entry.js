@@ -1,10 +1,11 @@
-import 'babel-polyfill'
-
 import {anotherAsync} from './content'
 //import tsContent from './tsContent.ts'
  
-require('./style.css')
 async function run(){    
-    return await anotherAsync()
+    return (await anotherAsync()).map((title, id) => (id+1) + '. ' + title)
 }
-run().then((res) => document.write(res))
+run().then((res) => {
+    document.querySelector('.main-list').innerHTML =  res.join('<br>');
+    console.log(res)
+    require('./bootstrap.css')
+})
