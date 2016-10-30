@@ -6,9 +6,9 @@ const compiler = webpack(config)
 const util = require('util')
 const path = require('path')
 
-compiler.run((err, data) => {
-    // /console.log(util.inspect(err, {showHidden: false, depth: null}))
-})
+// compiler.run((err, data) => {
+//     // /console.log(util.inspect(err, {showHidden: false, depth: null}))
+// })
 
 
 const port = 3000
