@@ -1,9 +1,10 @@
 import 'whatwg-fetch'
- 
+declare var module: { hot: any };
+module.hot.accept() 
+console.log('TypeScript 2 module')
 
 async function asyncFetch(){
     let t = await fetch('https://jsonplaceholder.typicode.com/posts') 
-    console.log('TypeScript module')
     let json = t.json();
     return json
 }

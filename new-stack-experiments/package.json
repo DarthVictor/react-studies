@@ -4,6 +4,7 @@
   "description": "My experiments with new stack for reactjs using TypeScript",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "DarthVictor",
@@ -20,8 +21,9 @@
     "style-loader": "^0.13.1",
     "ts-loader": "^0.9.5",
     "typescript": "^2.0.6",
-    "webpack": "^1.13.2",
-    "webpack-dev-middleware": "^1.8.4"
+    "webpack": "^1.13.3",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.1"
   },
   "dependencies": {
     "@types/whatwg-fetch": "0.0.32",
