@@ -1,7 +1,8 @@
 import * as React from 'react'
 
-export default class HelloWorld extends React.Component<{}, {}> {
+export class HelloWorld extends React.Component<{}, {}> {
     render() {
-        return <h1>Hello me</h1>
+        return <h1>Hello World</h1>
     }
 }
+export const HelloWorldStateless = () =>  <h1>Hello World Stateless</h1>
