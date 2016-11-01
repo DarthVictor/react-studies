@@ -35,7 +35,7 @@ module.exports = {
                 loader: 'babel',
             },
             {
-                test: /\.ts$/,
+                test: /\.ts/,
                 exclude: /(node_modules|bower_components)/,
                 loaders:  ['babel-loader', 'ts-loader'] 
                 /*
