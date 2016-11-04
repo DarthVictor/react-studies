@@ -26,6 +26,15 @@ module.exports = {
         aggragateTimeout: 1000
     },
 
+    resolve: {
+        /* Add '.ts' and '.tsx' as resolvable extensions.
+         Without this line you will have problems like this        
+         'Module not found: Error: Cannot resolve 'file' or 'directory' ./MyComponent in \src\components'
+         then importing files without extensions, for example using ./MyComponent instead ./MyComponent.tsx
+         */
+        extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+    },
+
     module: {
         loaders: [
             { test: /\.css$/, loader: 'style!css' },
@@ -40,9 +49,9 @@ module.exports = {
                 loaders:  ['babel-loader', 'ts-loader'] 
                 /*
                 ...\node_modules\webpack-core\lib\LoadersList.js:58                                                   
-                    if(element.loader) return element.loader.split("!");
+                    if(element.loader) return element.loader.split('!');
                     TypeError: element.loader.split is not a function 
-                    means, that you use "loader", instead of "loaders"
+                    means, that you use 'loader', instead of 'loaders'
                  */
             }
         ]
