@@ -9,19 +9,20 @@ module.exports = {
         'babel-polyfill', 
         'whatwg-fetch',
         // hot module entry point
-        'webpack-hot-middleware/client',
+        //'webpack-hot-middleware/client',
         //client application entry point
-        './src/clientEntry.js'
+        './src/serverEntry.js'
     ],
     output: {
         path: __dirname + '/dist',
-        filename: 'bundle.js'
+        filename: 'bundle.server.js',
+        library: 'server-bundle',
+        libraryTarget: 'commonjs2'
     } ,
 
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: NODE_ENV === 'development' ? 'source-map' : 'source-map',
-    watch: NODE_ENV === 'development',    
     watchOptions: {
         aggragateTimeout: 1000
     },
@@ -57,7 +58,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        //new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ]    
 }
