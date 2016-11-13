@@ -5,12 +5,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
     entry: [
-        // polyfills
-        'babel-polyfill', 
-        'whatwg-fetch',
-        // hot module entry point
-        //'webpack-hot-middleware/client',
-        //client application entry point
+        //server application entry point
         './src/serverEntry.js'
     ],
     output: {
@@ -23,6 +18,8 @@ module.exports = {
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: NODE_ENV === 'development' ? 'source-map' : 'source-map',
+        
+    watch: NODE_ENV === 'development',    
     watchOptions: {
         aggragateTimeout: 1000
     },
