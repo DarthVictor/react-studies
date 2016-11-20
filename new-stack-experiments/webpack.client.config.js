@@ -4,14 +4,14 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
     entry: [
-        //server application entry point
-        './src/client/serverEntry.js'
+        // hot module entry point
+        'webpack-hot-middleware/client',
+        //client application entry point
+        './src/client/clientEntry.js'
     ],
     output: {
         path: __dirname + '/dist',
-        filename: 'bundle.server-render.js',
-        library: 'server-render-bundle',
-        libraryTarget: 'commonjs2'
+        filename: 'bundle.client.js'
     } ,
 
 
@@ -19,7 +19,7 @@ module.exports = {
     devtool: NODE_ENV === 'development' ? 'source-map' : 'source-map',
     watch: NODE_ENV === 'development',    
     watchOptions: {
-        aggregateTimeout: 1000
+        aggragateTimeout: 1000
     },
 
     resolve: {
@@ -53,6 +53,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ]    
 }

@@ -1,18 +1,17 @@
-'use strict';
 const webpack = require('webpack');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
     entry: [
-        // hot module entry point
-        'webpack-hot-middleware/client',
-        //client application entry point
-        './src/client/clientEntry.js'
+        //server application entry point
+        './src/server/app.js'
     ],
     output: {
         path: __dirname + '/dist',
-        filename: 'bundle.js'
+        filename: 'bundle.server.js',
+        library: 'server-bundle',
+        libraryTarget: 'commonjs2'
     } ,
 
 
@@ -20,7 +19,7 @@ module.exports = {
     devtool: NODE_ENV === 'development' ? 'source-map' : 'source-map',
     watch: NODE_ENV === 'development',    
     watchOptions: {
-        aggragateTimeout: 1000
+        aggregateTimeout: 1000
     },
 
     resolve: {
@@ -54,7 +53,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ]    
 }
