@@ -4,6 +4,7 @@ require('whatwg-fetch')
 const express = require('express')
 const util = require('util')
 const path = require('path')
+const api = require('./src/server/app')
 
 // Express init
 const app = express()
@@ -35,7 +36,11 @@ const port = 3000
 
 app.get('/', function(req, res) {
     res.send(renderPath());
-});
+})
+
+
+app.use('/api', api)
+
 app.listen(port, (error) => {
     if (error) {
         console.error(error)
