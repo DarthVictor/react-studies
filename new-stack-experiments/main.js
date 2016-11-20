@@ -21,7 +21,7 @@ app.use(webpackHotMiddleware(compiler))
 // Server HMR
 //const reload = require('require-reload')(require);
 let renderPath;
-const configServer = require('./webpack.server.config')
+const configServer = require('./webpack.server-render.config')
 const compilerServer = webpack(configServer)
 compilerServer.watch({}, function(err, stats) {
     if(require.resolve('./dist/bundle.server')){

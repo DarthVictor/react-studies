@@ -6,7 +6,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 module.exports = {
     entry: [
         //server application entry point
-        './src/serverEntry.js'
+        './src/client/serverEntry.js'
     ],
     output: {
         path: __dirname + '/dist',

@@ -8,7 +8,7 @@ module.exports = {
         // hot module entry point
         'webpack-hot-middleware/client',
         //client application entry point
-        './src/clientEntry.js'
+        './src/client/clientEntry.js'
     ],
     output: {
         path: __dirname + '/dist',
