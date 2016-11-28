@@ -39,13 +39,11 @@ const app = express()
 const configServer = require('./webpack.server.config')
 const compilerServer = webpack(configServer)
 compilerServer.watch({}, function(err, stats) {
-    console.log(err, stats)
-    //  if(require.resolve('./dist/bundle.server')){
-    //      delete require.cache[require.resolve('./dist/bundle.server')]
-    //  }  
-     //console.log(require('./dist/bundle.server'))      
-     //app.use('/api', require('./dist/bundle.server').default)
-});
+     if(require.resolve('./dist/bundle.server')){
+         delete require.cache[require.resolve('./dist/bundle.server')]
+     }  
+     app.use('/api', require('./dist/bundle.server').default)
+})
 
 
 // Express run

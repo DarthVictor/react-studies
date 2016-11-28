@@ -1,18 +1,29 @@
 const webpack = require('webpack');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const path = require('path');
+const fs = require('fs');
+let nodeModules = {};
 
+// note the path.resolve(__dirname, ...) part
+// without it, eslint-import-resolver-webpack fails
+// since eslint might be invoked with different cwd
+fs.readdirSync(path.resolve(__dirname, 'node_modules'))
+    .filter(x => ['.bin'].indexOf(x) === -1)
+    .forEach(mod => { nodeModules[mod] = `commonjs ${mod}`; })
 module.exports = {
     entry: [
         //server application entry point
         './src/server/app.js'
     ],
+
+    target: 'node',
     output: {
         path: __dirname + '/dist',
         filename: 'bundle.server.js',
-        library: 'server-bundle',
         libraryTarget: 'commonjs2'
-    } ,
+    },
+    externals: nodeModules,
 
 
     // Enable sourcemaps for debugging webpack's output.
