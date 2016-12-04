@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/posts', (req, res) =>{
   return res.json(db.posts)
 })
-router.get('/comments2', (req, res) =>{
+router.get('/comments', (req, res) =>{
   return res.json(db.comments)
 })
 export default router
