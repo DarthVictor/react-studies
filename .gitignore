@@ -1,7 +1,7 @@
-/*/node_modules
-/*/dist
-/*/typings
-/*/.tmp
+**/node_modules
+**/dist
+**/typings
+**/.tmp
 *.pdf
 /new-stack-experiments/bundle.js
 /habr-isomorphic-react-js/*.log
