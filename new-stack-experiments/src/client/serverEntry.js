@@ -19,7 +19,7 @@ function renderHTML(componentHTML) {
         </head>
         <body>
             <div id="react-app" class="container">${componentHTML}</div>
-            <script type="text/javascript" src="bundle.client.js" charset="utf-8"></script>
+            <script type="text/javascript" src="/dist/bundle.client.js" charset="utf-8"></script>
         </body>
     </html>
   `;

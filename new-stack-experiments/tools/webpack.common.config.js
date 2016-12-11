@@ -1,25 +1,21 @@
-const webpack = require('webpack');
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
+const webpack = require('webpack')
+const path = require('path')
+const NODE_ENV = process.env.NODE_ENV || 'development'
+const isDevelopment = NODE_ENV === 'development'
+const rootDir = path.join(__dirname, '..')
 
 module.exports = {
-    entry: [
-        //server application entry point
-        './src/client/serverEntry.js'
-    ],
+    entry: [],
     output: {
-        path: __dirname + '/dist',
-        filename: 'bundle.server-render.js',
-        library: 'server-render-bundle',
-        libraryTarget: 'commonjs2'
+        path: path.join(rootDir, 'dist'),
     } ,
 
 
     // Enable sourcemaps for debugging webpack's output.
-    devtool: NODE_ENV === 'development' ? 'source-map' : 'source-map',
-    watch: NODE_ENV === 'development',    
+    devtool: isDevelopment ? 'source-map' : 'source-map',
+    watch: isDevelopment,    
     watchOptions: {
-        aggregateTimeout: 1000
+        aggragateTimeout: 1000
     },
 
     resolve: {
@@ -52,7 +48,5 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new webpack.NoErrorsPlugin()
-    ]    
+    plugins: [new webpack.NoErrorsPlugin()]    
 }
