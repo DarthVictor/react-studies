@@ -17,7 +17,7 @@ config.entry = [
 config.output = Object.assign({}, config.output)
 config.output.filename= 'bundle.client.js'
 config.output.publicPath = '/dist/'
-config.plugins = [new webpack.HotModuleReplacementPlugin()].concat(config.plugins)
+config.plugins = [new webpack.optimize.OccurenceOrderPlugin(), new webpack.HotModuleReplacementPlugin()].concat(config.plugins)
 
 module.exports = config
 // module.exports = {
@@ -72,6 +72,7 @@ module.exports = config
 //         ]
 //     },
 //     plugins: [
+//         new webpack.optimize.OccurenceOrderPlugin(),
 //         new webpack.HotModuleReplacementPlugin(),
 //         new webpack.NoErrorsPlugin()
 //     ]    
