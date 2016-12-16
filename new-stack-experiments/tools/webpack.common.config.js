@@ -15,7 +15,7 @@ module.exports = {
     devtool: isDevelopment ? 'source-map' : 'source-map',
     watch: isDevelopment,    
     watchOptions: {
-        aggragateTimeout: 1000
+        aggregateTimeout: 1000
     },
 
     resolve: {
